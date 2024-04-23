@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Msg</title>
+    <style type="text/css">
+        #top{
+            background-color:gray;
+            line-height:30px;
+            font-family:標楷體;
+            font-size:16px;
+        }
+        #id3{
+            height:150px;
+            background-color:rgb(50,63,79);
+            color:white;
+            font-family:標楷體;
+            padding:15px;
+        }
+        #left{
+            position:absolute;
+            height:400px;
+            width:400px;
+            background-color:#AAEEEE
+        }
+        #right{
+            margin-left:400px;
+            height:400px;
+            background-color:#96ea79
+        }
+        a:link{
+            color:yellow;
+        }
+        a:active{
+            background-color:gray;
+        }
+        a:visited{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <header id="top">
+        <p style="color:white">
+            歡迎光臨&nbsp&nbsp&nbsp&nbsp&nbsp
+            <a href="#1">[簡 介] &nbsp&nbsp</a>
+            <a href="#2">[好站連結] &nbsp&nbsp</a>
+            <a href="#3">[聯絡資訊] &nbsp&nbsp</a>
+        </p>
+    </header>
+    <a name="1"></a>
+    <section id="id1">
+        <div>
+            <div id="left">
+                <p>[簡 介]</p>
+                國立台中科技大學於民國100年12月1日起，由國立台中技術學院改名，並與國立台中護理專科學院合併。
+            </div>
+            <div id="right">
+                <p align="center">
+                    @ViewBag.name
+                </p>
+            </div>
+        </div>
+    </section>
+    <a name="2"></a>
+    <section id="id3">
+        <h3>好站連結</h3>
+        <p>
+            <a href="https://www.google.com/">Google首頁</a><br/>
+            <a href="https://www.yam.com/">蕃薯藤 首頁</a><br/>
+            <a href="https://www.youtube.com/?g1=TW&h1=zh=TW">Youtube 首頁</a>
+        </p>
+    </section>
+    <a name="3"></a>
+    <footer style="color:silver;background-color:darkgreen;font-family:標楷體">
+        <br/>
+        <br/>
+        <address>
+            三民校區:<strong>台中市北區三民路三段129號</strong><br/>
+            電話:(04)22195678
+        </address>
+        <br/>
+        <br/>
+        <br/>
+    </footer>
+</body>
+</html>
