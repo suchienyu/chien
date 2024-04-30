@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東東服飾</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>東東服飾</h1>
+    <table id="clothesTable">
+        <tr>
+            <th>品名</th>
+            <th>貨號</th>
+            <th>顏色</th>
+            <th>尺寸</th>
+            <th>庫存量</th>
+            <th>售價</th>
+        </tr>
+    </table>
+    
+    <h2>添加衣服</h2>
+    <form id="addClothForm">
+        <input type="text" id="name" placeholder="品名" required>
+        <input type="text" id="code" placeholder="貨號" required>
+        <input type="text" id="color" placeholder="顏色" required>
+        <input type="text" id="size" placeholder="尺寸" required>
+        <input type="number" id="stock" placeholder="庫存量" required>
+        <input type="number" id="price" placeholder="售價" required>
+        <input type="submit" value="提交">
+    </form>
+</div>
+
+<script>
+    document.getElementById("addClothForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var name = document.getElementById("name").value;
+        var code = document.getElementById("code").value;
+        var color = document.getElementById("color").value;
+        var size = document.getElementById("size").value;
+        var stock = document.getElementById("stock").value;
+        var price = document.getElementById("price").value;
+
+        var newRow = document.createElement("tr");
+
+        newRow.innerHTML = "<td>" + name + "</td>" +
+                           "<td>" + code + "</td>" +
+                           "<td>" + color + "</td>" +
+                           "<td>" + size + "</td>" +
+                           "<td>" + stock + "</td>" +
+                           "<td>" + price + "</td>";
+
+        document.getElementById("clothesTable").appendChild(newRow);
+
+        document.getElementById("addClothForm").reset();
+    });
+</script>
+
+</body>
+</html>
